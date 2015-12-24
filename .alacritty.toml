@@ -1,36 +1,86 @@
 import = [
-    "~/.config/alacritty/themes/themes/everforest_dark.toml"
+#"~/.config/alacritty/themes/themes/alabaster.toml"
+#"~/.config/alacritty/themes/themes/ashes_light.toml"
+#"~/.config/alacritty/themes/themes/ayu_light.toml"
+#"~/.config/alacritty/themes/themes/bluish.toml"
+#"~/.config/alacritty/themes/themes/catppuccin_latte.toml"
+#"~/.config/alacritty/themes/themes/citylights.toml"
+#"~/.config/alacritty/themes/themes/cyber_punk_neon.toml"
+#"~/.config/alacritty/themes/themes/dayfox.toml"
+#"~/.config/alacritty/themes/themes/dawnfox.toml"
+#"~/.config/alacritty/themes/themes/deep_space.toml"
+#"~/.config/alacritty/themes/themes/enfocado_light.toml"
+#"~/.config/alacritty/themes/themes/everforest_light.toml"
+#"~/.config/alacritty/themes/themes/github_light.toml"
+# "~/.config/alacritty/themes/themes/github_light_high_contrast.toml"
+#"~/.config/alacritty/themes/themes/noctis_lux.toml"
+#"~/.config/alacritty/themes/themes/tokyo_night.toml"
+#"~/.config/alacritty/themes/themes/one_light.toml"
+#"~/.config/alacritty/themes/themes/oxocarbon.toml"
+# "~/.config/alacritty/themes/themes/papertheme.toml"
+#"~/.config/alacritty/themes/themes/papercolor_dark.toml"
+#"~/.config/alacritty/themes/themes/solarized_dark.toml"
+# "~/.config/alacritty/themes/themes/solarized_light.toml"
+#"~/.config/alacritty/themes/themes/papercolor_dark.toml"
+#~/.config/alacritty/themes/themes/solarized_dark.toml"
+#"~/.config/alacritty/themes/themes/papertheme.toml"
+# "~/.config/alacritty/themes/themes/solarized_light.toml"
 ]
 
 [font]
-#normal.family = "Cascadia Code PL"
-#bold.family = "Cascadia Code PL"
-#italic.family = "Cascadia Code PL"
-#bold_italic.family = "Cascadia Code PL"
-size = 16.0
+size = 8
 
 [window]
-opacity = 1.0
-padding.x = 10
-padding.y = 10
+opacity = 1
 decorations = "Full"
-decorations_theme_variant = "Dark" # "Light"
+decorations_theme_variant = "Dark"
 startup_mode = "Maximized"
 
-# saves selection by made my mouse to the clipboard
-# so it can be pasted on right click or nominal
-# keyboard bindings, i.e Cntr+V or Command+V
+  [window.padding]
+  x = 10
+  y = 10
+
 [selection]
 save_to_clipboard = true
 
 [scrolling]
-history = 100000
+history = 100_000
 
 [[keyboard.bindings]]
 action = "ToggleViMode"
 key = "Q"
 mode = "Vi"
 
-[mouse]
-hide_when_typing = true
+[cursor.style]
+shape = "Block"
+blinking = "Always"
+
+[cursor.vi_mode_style]
+shape = "Block"
+blinking = "Always"
+
+#[colors.primary]
+##background = "0x313f46"
+#background = "0x000000"
+#foreground = "0xf2fbff"
+#
+#[colors.normal]
+#black = "0x313f46"
+#red = "0xc31633"
+#green = "0x4caf50"
+#yellow = "0xefaa04"
+#blue = "0x0961c4"
+#magenta = "0x8a0c8f"
+#cyan = "0x067d8a"
+#white = "0xb1bfc6"
+#
+#[colors.bright]
+#black = "0x4b5960"
+#red = "0xff5673"
+#green = "0x8cef90"
+#yellow = "0xffea44"
+#blue = "0x49a1ff"
+#magenta = "0xca4ccf"
+#cyan = "0x46bdca"
+#white = "0xf2fbff"
 
