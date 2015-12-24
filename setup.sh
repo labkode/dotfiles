@@ -11,6 +11,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 # install Plugins
 vim +PlugInstall +qall
+vim +PlugUpdate +qall
 
 cp .tmux.conf ~
 cp .vimrc ~
