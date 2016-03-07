@@ -9,3 +9,4 @@ export PATH=$PATH:$GOPATH/bin
 alias red="cd /Volumes/red"
 alias repo="red; cd repo"
 alias clawiodev="cd $GOPATH/src/github.com/clawio"
+alias up="/Applications/Docker/Docker\ Quickstart\ Terminal.app/Contents/Resources/Scripts/start.sh"
