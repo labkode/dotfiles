@@ -17,9 +17,9 @@ source /opt/rh/rh-git29/enable
 alias cbox="cd /eos/home-g/gonzalhu/"
 kinit -R && eval "$(ssh-agent -s)" && ssh-add /eos/home-g/gonzalhu/Private/keys/github.key
 
-alias greva="cd /home/gonzalhu/Development/reva"
-alias gcs3apis="cd /home/gonzalhu/Development/cs3apis"
-alias gbox="cd /home/gonzalhu/Development/it-puppet-hostgroup-box"
-alias geos="cd /home/gonzalhu/Development/it-puppet-hostgroup-eos"
+alias greva="cd /home/gonzalhu/dev/reva"
+alias gcs3apis="cd /home/gonzalhu/dev/cs3apis"
+alias gbox="cd /home/gonzalhu/dev/it-puppet-hostgroup-box"
+alias geos="cd /home/gonzalhu/dev/it-puppet-hostgroup-eos"
 alias music="(nohup spotify &>/dev/null &) &&  exit"
 
