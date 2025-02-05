@@ -1,5 +1,1 @@
-```
-git clone https://github.com/labkode/dotfiles
-cd dotfiles
-./setup.sh
-```
+curl https://raw.githubusercontent.com/labkode/dotfiles/master/setup.sh | sh
