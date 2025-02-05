@@ -1,6 +1,7 @@
 #/bin/bash
 
 set -e
+set -x
 
 os=`uname -s`
 echo "System is $os"
