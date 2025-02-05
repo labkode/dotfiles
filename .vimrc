@@ -83,6 +83,8 @@ au BufRead,BufNewFile *.feature setlocal spell
 au BufRead,BufNewFile *.txt setlocal spell
 
 let mapleader = " "
+inoremap jh <Esc>:w<CR>
+nnoremap <silent><leader>w :w!<CR>
 nnoremap <silent><leader>q :q<CR>
 nnoremap <leader>ov :Vex<CR>
 nnoremap <leader>oh :Hex<CR>
