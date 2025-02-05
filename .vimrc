@@ -10,6 +10,12 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } "Go
 Plug 'farmergreg/vim-lastplace'
 Plug 'tomasiser/vim-code-dark'
+Plug 'preservim/nerdtree'
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-fugitive'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'NeogitOrg/neogit'
+Plug 'voldikss/vim-floaterm'
 call plug#end()              " required
 
 colorscheme codedark
@@ -32,7 +38,6 @@ let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 " This makes the signature function always pop up
 " see https://github.com/neoclide/coc.nvim/issues/537#issuecomment-473649657
 autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-
 
 " CoC extensions
 let g:coc_global_extensions = ['coc-solargraph', 'coc-tsserver', 'coc-json', 'coc-go', 'coc-pyright', 'coc-rust-analyzer']
@@ -100,6 +105,20 @@ set rtp+=~/.fzf
 nnoremap <C-p> :GFiles<Cr>
 nnoremap <C-g> :Rg <Cr>
 inoremap <silent><expr> <c-space> coc#refresh()
+
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+nnoremap   <silent>   <F7>    :FloatermNew<CR>
+tnoremap   <silent>   <F7>    <C-\><C-n>:FloatermNew<CR>
+nnoremap   <silent>   <F8>    :FloatermPrev<CR>
+tnoremap   <silent>   <F8>    <C-\><C-n>:FloatermPrev<CR>
+nnoremap   <silent>   <F9>    :FloatermNext<CR>
+tnoremap   <silent>   <F9>    <C-\><C-n>:FloatermNext<CR>
+nnoremap   <silent>   <F12>   :FloatermToggle<CR>
+tnoremap   <silent>   <F12>   <C-\><C-n>:FloatermToggle<CR>
 """"
 
 " Use tab for trigger completion with characters ahead and navigate
