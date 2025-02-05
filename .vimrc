@@ -39,7 +39,6 @@ let g:coc_global_extensions = ['coc-solargraph', 'coc-tsserver', 'coc-json', 'co
 
 "filetype plugin indent on    " required
 "set smartindent
-syntax off
 set ttyfast
 set lazyredraw
 set updatetime=300
@@ -163,3 +162,4 @@ xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 """"
 
+syntax on
