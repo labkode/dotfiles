@@ -13,7 +13,7 @@ rm -rf ~/.config/nvim/ && mkdir -p ~/.config/nvim/
 if [ "$os" = "Linux" ]; then
   sudo dnf install ripgrep -y
   sudo dnf install nodejs
-  yum install -y neovim
+  sudo yum install -y neovim
   node -v
   npm -v
 elif [ "$os" = "Darwin" ]; then
