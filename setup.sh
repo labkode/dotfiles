@@ -40,6 +40,10 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
+cp .tmux.conf ~
+cp .vimrc ~
+cp .vimrc ~/.config/nvim/init.vim
+
 # install Plugins
 vim +PlugInstall +qall
 vim +PlugUpdate +qall
@@ -48,6 +52,3 @@ nvim +PlugInstall +qall
 nvim +PlugUpdate +qall
 
 
-cp .tmux.conf ~
-cp .vimrc ~
-cp .vimrc ~/.config/nvim/init.vim
