@@ -11,11 +11,11 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } "Go
 Plug 'farmergreg/vim-lastplace'
 Plug 'tomasiser/vim-code-dark'
 Plug 'preservim/nerdtree'
-Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'NeogitOrg/neogit'
 Plug 'voldikss/vim-floaterm'
+Plug 'joerdav/templ.vim'
 call plug#end()              " required
 
 colorscheme codedark
@@ -40,7 +40,7 @@ let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 
 " CoC extensions
-let g:coc_global_extensions = ['coc-solargraph', 'coc-tsserver', 'coc-json', 'coc-go', 'coc-pyright', 'coc-rust-analyzer']
+let g:coc_global_extensions = ['coc-solargraph', 'coc-tsserver', 'coc-json', 'coc-go', 'coc-pyright', 'coc-rust-analyzer', 'coc-pairs']
 
 "filetype plugin indent on    " required
 "set smartindent
@@ -127,21 +127,20 @@ tnoremap   <silent>   <F12>   <C-\><C-n>:FloatermToggle<CR>
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
-function! s:check_back_space() abort
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-
-
-" Make <CR> auto-select the first completion item and notify coc.nvim to
-" format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
 
 " Use <c-space> to trigger completion
 if has('nvim')
